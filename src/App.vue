@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <Todos/>
+        <Todos v-bind:todos="todos"/>
     </div>
 </template>
 
@@ -13,6 +13,15 @@
             Todos
         },
         data() {
+            return {
+                todos:[
+                    {
+                        id: 1,
+                        title: "Todo One",
+                        completed: false
+                    }
+                ]
+            }
         }
     }
 </script>
