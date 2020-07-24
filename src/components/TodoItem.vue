@@ -1,10 +1,12 @@
 <template>
-
+    <div class="todo-item" :class="{'is-completed': todo.completed}">
+        <p>{{todo.title}}</p>
+    </div>
 </template>
-
 <script>
     export default {
-        name: "TodoItem"
+        name: "TodoItem",
+        props: ["todo"]
     }
 </script>
 
