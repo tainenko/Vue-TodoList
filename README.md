@@ -1,4 +1,4 @@
-# reading_list
+# Vue TodoList
 
 ## Project setup
 ```
