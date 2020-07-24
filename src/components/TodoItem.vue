@@ -1,6 +1,7 @@
 <template>
     <div class="todo-item" :class="{'is-completed': todo.completed}">
-        <p>{{todo.title}}</p>
+        <input type="checkbox" v-on:change="$emit('mark-todo',todo.id)">
+        {{todo.title}}
     </div>
 </template>
 <script>

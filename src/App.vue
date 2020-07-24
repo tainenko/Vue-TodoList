@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <Todos v-bind:todos="todos"/>
+        <Todos v-bind:todos="todos" v-on:mark-todo="markCompleted"/>
     </div>
 </template>
 
@@ -11,6 +11,15 @@
         name: 'App',
         components: {
             Todos
+        },
+        methods: {
+            markCompleted(id) {
+                this.todos.forEach(item => {
+                    if (item.id === id) {
+                        item.completed = !item.completed
+                    }
+                })
+            }
         },
         data() {
             return {
@@ -23,7 +32,7 @@
                     {
                         id: 2,
                         title: "Todo Two",
-                        completed: true
+                        completed: false
                     },
                     {
                         id: 3,
